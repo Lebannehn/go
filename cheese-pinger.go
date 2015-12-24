@@ -59,6 +59,7 @@ func pingMyHost(htp string) (string,string, error)  {
 		
 		rb := make([]byte, 1500)
 		
+		// set timeout to 3 secs
 		if err := c.SetReadDeadline(time.Now().Add(3 * time.Second)); err != nil {
 			return "SetReadDeadline error",htp,err
 		}
